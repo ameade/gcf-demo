@@ -2,7 +2,10 @@ import logging
 log = logging.getLogger()
 try:
   import googleclouddebugger
-  googleclouddebugger.enable()
+  googleclouddebugger.enable(
+   module='gcf-demo',
+    version='1'
+    )
 except ImportError:
   log.exception()
 
