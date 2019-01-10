@@ -1,11 +1,10 @@
+import logging
+log = logging.getLogger()
 try:
   import googleclouddebugger
   googleclouddebugger.enable()
 except ImportError:
-  pass
-
-import logging
-log = logging.getLogger()
+  log.exception()
 
 def hello_world(request):
     """Responds to any HTTP request.
