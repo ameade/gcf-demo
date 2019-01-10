@@ -24,6 +24,7 @@ def hello_world(request):
     try:
         request_json = request.get_json()
         if request.args and 'message' in request.args:
+            raise Exception('intentional error!')
             message = request.args.get('message')
         elif request_json and 'message' in request_json:
             message = request_json['message']
